@@ -4,6 +4,9 @@ import org.example.Product;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CartOrderTest {
@@ -55,8 +58,17 @@ public class CartOrderTest {
 
     @Test
     public void testGetOrderId() {
-        Order order1 = new Order(1);
-        Order order2 = new Order(2);
+
+        Product product1 = new Product(1, "Product 1", 100);
+        Product product2 = new Product(2, "Product 2", 99.9);
+
+        List<Product> products1 = new ArrayList<>();
+        products1.add(product1);
+        List<Product> products2 = new ArrayList<>();
+        products2.add(product2);
+
+        Order order1 = new Order(1, products1);
+        Order order2 = new Order(2, products2);
 
         assertEquals(1, order1.getOrderId());
         assertEquals(2, order2.getOrderId());

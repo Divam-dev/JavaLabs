@@ -95,12 +95,17 @@ public class Main {
                     if (productsInOrder.isEmpty()) {
                         System.out.println("Cart is empty. Cannot place an empty order.");
                     } else {
-                        Order order = new Order(orderId++);
+                        Order order = new Order(orderId++, productsInOrder);
                         orders.add(order);
                         System.out.println("Order placed successfully.");
                         System.out.println("Order ID: " + order.getOrderId());
                         System.out.println("Order Status: " + order.getStatus());
-                        System.out.println("Number of Products in Order: " + productsInOrder.size());
+
+                        System.out.println("Products in Order:");
+                        for (Product orderedProduct : productsInOrder) {
+                            System.out.println(orderedProduct);
+                        }
+
                         cart.clearCart();
                     }
                     break;
