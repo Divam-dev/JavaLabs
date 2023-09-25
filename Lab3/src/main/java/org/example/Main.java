@@ -91,18 +91,18 @@ public class Main {
                     }
                     break;
                 case 3:
-                    List<Product> productsInOrder = cart.getProducts();
-                    if (productsInOrder.isEmpty()) {
+                    List<Product> productsToOrder = cart.getProducts();
+                    if (productsToOrder.isEmpty()) {
                         System.out.println("Cart is empty. Cannot place an empty order.");
                     } else {
-                        Order order = new Order(orderId++, productsInOrder);
+                        Order order = new Order(orderId++, new ArrayList<>(productsToOrder));
                         orders.add(order);
                         System.out.println("Order placed successfully.");
                         System.out.println("Order ID: " + order.getOrderId());
                         System.out.println("Order Status: " + order.getStatus());
 
                         System.out.println("Products in Order:");
-                        for (Product orderedProduct : productsInOrder) {
+                        for (Product orderedProduct : productsToOrder) {
                             System.out.println(orderedProduct);
                         }
 
@@ -126,6 +126,14 @@ public class Main {
                     for (Order order : orders) {
                         if (order.getOrderId() == searchOrderId) {
                             System.out.println("Order ID " + searchOrderId + ": " + order.getStatus());
+
+                            List<Product> productsInThisOrder = order.getProducts();
+
+                            System.out.println("Products in Order:");
+                            for (Product orderedProduct : productsInThisOrder) {
+                                System.out.println(orderedProduct);
+                            }
+
                             found = true;
                             break;
                         }
