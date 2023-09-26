@@ -1,6 +1,7 @@
 # Лабораторні роботи java:
-## [Лабораторна робота №1](Lab1/README.md)
-## [Лабораторна робота №2](Lab2/README.md)(In progress)
-## [Лабораторна робота №3](Lab3/README.md)
-## [Лабораторна робота №4.1](Lab4.1/README.md)
-## [Лабораторна робота №4.2](Lab4.2/README.md)(In progress)
+## [Лабораторна робота №1](src/main/java/org/example/Lab1/README.md)
+## [Лабораторна робота №2](src/main/java/org/example/Lab2/README.md)(In progress)
+## [Лабораторна робота №3](src/main/java/org/example/Lab3/README.md)
+## [Лабораторна робота №4_1](src/main/java/org/example/Lab4_1/README.md)
+## [Лабораторна робота №4_2](src/main/java/org/example/Lab4_2/README.md)(In progress)
+## [Лабораторна робота №5](src/main/java/org/example/Lab4_2/README.md)(In progress)
