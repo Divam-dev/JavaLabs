@@ -64,7 +64,7 @@ public class LibrarySystemTest {
 
     @Test
     void testRegisterPatron() {
-        var patron = new Patron("Oleksandr", "78901");
+        Patron patron = new Patron("Oleksandr", "78901");
         library.registerPatron(patron);
         assertTrue(library.getPatrons().contains(patron));
     }
@@ -92,14 +92,17 @@ public class LibrarySystemTest {
 
     @Test
     void testListBorrowed() {
-        var patron = new Patron("Oleksandr", "78901");
+        var patron1 = new Patron("Oleksandr", "78901");
+        var patron2 = new Patron("Ivan", "78901");
         var book = new Book("Harry Potter and the Sorcerer's Stone", "2468", "J.K. Rowling");
         var dvd = new DVD("The Matrix", "567890", 136);
-        library.registerPatron(patron);
+        library.registerPatron(patron1);
+        library.registerPatron(patron2);
         library.add(book);
         library.add(dvd);
-        library.lendItem(patron, book);
-        library.lendItem(patron, dvd);
+        library.lendItem(patron1, book);
+        library.lendItem(patron1, dvd);
+        library.lendItem(patron2, dvd);
         library.listBorrowed();
     }
 
