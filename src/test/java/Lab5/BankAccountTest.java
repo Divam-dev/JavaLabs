@@ -28,14 +28,14 @@ public class BankAccountTest {
     }
 
     @Test
-    void testNegativeBalance() {
+    void testNegativeAmount() {
         double negativeAmount = -50;
 
         assertThrows(NegativeAmountException.class, () -> account.deposit(negativeAmount));
     }
 
     @Test
-    void testBigBalance() {
+    void testBigAmount() {
         double bigAmount = 100000;
 
         assertThrows(InsufficientFundsException.class, () -> account.withdraw(bigAmount));
