@@ -137,29 +137,30 @@ public class Cinema {
     }
     public void printSeatingArrangement(int hallNumber) {
         if (hallNumber < 0 || hallNumber >= this.hallNumber) {
-        System.out.println("Invalid hall number.");
-        return;
-    }
-
-    System.out.println("  " + createSeatNumbers());
-
-     for (int row = 0; row < rowNumber; row++) {
-        System.out.print(row + " | ");
-        for (int seat = 0; seat < seatNumber; seat++) {
-            char status = (seats[hallNumber][row][seat] == 0) ? '0' : '1';
-            String colorCode = (status == '0') ? "\u001B[32m" : "\u001B[31m";
-            String bgColor = (status == '0') ? "\u001B[40m" : "\u001B[43m";
-            String reset = "\u001B[0m";
-            System.out.print(bgColor + colorCode + status + "  " + reset);
+            System.out.println("Invalid hall number.");
+            return;
         }
-        System.out.println("|" + row);
+
+        System.out.println("  " + createSeatNumbers());
+
+        for (int row = 0; row < rowNumber; row++) {
+            System.out.print(row + " | ");
+            for (int seat = 0; seat < seatNumber; seat++) {
+                char status = (seats[hallNumber][row][seat] == 0) ? '0' : '1';
+                String colorCode = (status == '0') ? "\u001B[32m" : "\u001B[31m";
+                String bgColor = (status == '0') ? "\u001B[40m" : "\u001B[43m";
+                String reset = "\u001B[0m";
+                System.out.print(bgColor + colorCode + status + "  " + reset);
+            }
+            System.out.println("|" + (row + 1)); // Add 1 to seat row
+        }
+
+        System.out.println("  " + createSeatNumbers());
     }
 
-    System.out.println("  " + createSeatNumbers());
-}
     private String createSeatNumbers() {
         StringBuilder numbers = new StringBuilder();
-        for (int seat = 0; seat < seatNumber; seat++) {
+        for (int seat = 1; seat <= seatNumber; seat++) { // Start from 1
             numbers.append(String.format("%3d", seat));
         }
         return numbers.toString();

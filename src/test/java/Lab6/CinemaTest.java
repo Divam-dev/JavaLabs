@@ -14,7 +14,7 @@ public class CinemaTest {
 
     @BeforeEach
     public void setup() {
-        cinema = new Cinema(5, 3, 10);
+        cinema = new Cinema(5, 5, 10);
     }
 
     @Test
@@ -82,7 +82,7 @@ public class CinemaTest {
     public void testFindBestAvailable() {
         List<Seat[]> bestAvailableSeats = cinema.findBestAvailable(0, 4);
         assertNotNull(bestAvailableSeats);
-        assertEquals(6, bestAvailableSeats.size());
+        assertEquals(10, bestAvailableSeats.size());
 
         Seat[] seats = bestAvailableSeats.get(0);
         for (int i = 1; i < seats.length; i++) {
