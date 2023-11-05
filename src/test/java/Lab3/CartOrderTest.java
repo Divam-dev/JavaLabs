@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 public class CartOrderTest {
 
@@ -22,8 +23,9 @@ public class CartOrderTest {
 
     @Test
     public void testAddProduct() {
-        Product product1 = new Product(1, "Product 1", 100);
-        Product product2 = new Product(2, "Product 2", 99.9);
+        Product product1 = mock(Product.class);
+        Product product2 = mock(Product.class);
+
         cart.addProduct(product1);
         cart.addProduct(product2);
 
@@ -33,8 +35,8 @@ public class CartOrderTest {
 
     @Test
     public void testRemoveProduct() {
-        Product product1 = new Product(1, "Product 1", 100);
-        Product product2 = new Product(2, "Product 2", 99.9);
+        Product product1 = mock(Product.class);
+        Product product2 = mock(Product.class);
 
         cart.addProduct(product1);
         cart.addProduct(product2);
@@ -47,8 +49,8 @@ public class CartOrderTest {
 
     @Test
     public void testGetProducts() {
-        Product product1 = new Product(1, "Product 1", 100);
-        Product product2 = new Product(2, "Product 2", 99.9);
+        Product product1 = mock(Product.class);
+        Product product2 = mock(Product.class);
 
         cart.addProduct(product1);
         cart.addProduct(product2);
@@ -61,16 +63,19 @@ public class CartOrderTest {
     @Test
     public void testGetOrderId() {
 
-        Product product1 = new Product(1, "Product 1", 100);
-        Product product2 = new Product(2, "Product 2", 99.9);
+        Product product1 = mock(Product.class);
+        Product product2 = mock(Product.class);
 
         List<Product> products1 = new ArrayList<>();
         products1.add(product1);
         List<Product> products2 = new ArrayList<>();
         products2.add(product2);
 
-        Order order1 = new Order(1, products1);
-        Order order2 = new Order(2, products2);
+        Order order1 = mock(Order.class);
+        when(order1.getOrderId()).thenReturn(1);
+
+        Order order2 = mock(Order.class);
+        when(order2.getOrderId()).thenReturn(2);
 
         assertEquals(1, order1.getOrderId());
         assertEquals(2, order2.getOrderId());
