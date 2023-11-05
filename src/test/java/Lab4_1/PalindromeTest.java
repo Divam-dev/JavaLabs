@@ -15,8 +15,10 @@ public class PalindromeTest {
         assertTrue(Palindrome.isPalindrome("о Ко"));
         assertTrue(Palindrome.isPalindrome("Noo n"));
         assertTrue(Palindrome.isPalindrome("12321"));
+        assertTrue(Palindrome.isPalindrome(" "));
         assertTrue(Palindrome.isPalindrome(""));
         assertTrue(Palindrome.isPalindrome("a"));
+        assertTrue(Palindrome.isPalindrome("A man a plan a canal Panama"));
 
         assertFalse(Palindrome.isPalindrome("hello"));
         assertFalse(Palindrome.isPalindrome("Паліндром"));
