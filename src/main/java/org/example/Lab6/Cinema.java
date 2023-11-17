@@ -143,16 +143,16 @@ public class Cinema {
 
         System.out.println("  " + createSeatNumbers());
 
-        for (int row = 0; row < rowNumber; row++) {
+        for (int row = 1; row <= rowNumber; row++) {
             System.out.print(row + " | ");
             for (int seat = 0; seat < seatNumber; seat++) {
-                char status = (seats[hallNumber][row][seat] == 0) ? '0' : '1';
+                char status = (seats[hallNumber][row - 1][seat] == 0) ? '0' : '1';
                 String colorCode = (status == '0') ? "\u001B[32m" : "\u001B[31m";
                 String bgColor = (status == '0') ? "\u001B[40m" : "\u001B[43m";
                 String reset = "\u001B[0m";
                 System.out.print(bgColor + colorCode + status + "  " + reset);
             }
-            System.out.println("|" + (row + 1)); // Add 1 to seat row
+            System.out.println("|" + row);
         }
 
         System.out.println("  " + createSeatNumbers());
@@ -160,7 +160,7 @@ public class Cinema {
 
     private String createSeatNumbers() {
         StringBuilder numbers = new StringBuilder();
-        for (int seat = 1; seat <= seatNumber; seat++) { // Start from 1
+        for (int seat = 1; seat <= seatNumber; seat++) {
             numbers.append(String.format("%3d", seat));
         }
         return numbers.toString();
