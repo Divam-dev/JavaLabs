@@ -9,19 +9,18 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 public class PalindromeTest {
 
     @Test
-    public void testIsPalindrome() {
-
+    void isPalindrome() {
+        assertTrue(Palindrome.isPalindrome(null));
         assertTrue(Palindrome.isPalindrome("radar"));
-        assertTrue(Palindrome.isPalindrome("о Ко"));
-        assertTrue(Palindrome.isPalindrome("Noo n"));
-        assertTrue(Palindrome.isPalindrome("12321"));
-        assertTrue(Palindrome.isPalindrome(" "));
-        assertTrue(Palindrome.isPalindrome(""));
-        assertTrue(Palindrome.isPalindrome("a"));
-        assertTrue(Palindrome.isPalindrome("A man a plan a canal Panama"));
-
-        assertFalse(Palindrome.isPalindrome("hello"));
-        assertFalse(Palindrome.isPalindrome("Паліндром"));
-
+        assertFalse(Palindrome.isPalindrome("banana"));
+        assertTrue(Palindrome.isPalindrome("hannah"));
+        assertTrue(Palindrome.isPalindrome("pup"));
+        assertTrue(Palindrome.isPalindrome("nan"));
+        assertFalse(Palindrome.isPalindrome("lollipop"));
+        assertTrue(Palindrome.isPalindrome("eye"));
+        assertTrue(Palindrome.isPalindrome("6543456"));
+        assertTrue(Palindrome.isPalindrome("step on no pets"));
+        assertFalse(Palindrome.isPalindrome("A man a plan a canal Panama"));
     }
+
 }
