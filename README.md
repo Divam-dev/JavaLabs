@@ -7,5 +7,5 @@
 ## [Лабораторна робота №5](src/main/java/org/example/Lab5/README.md)
 ## [Лабораторна робота №6](src/main/java/org/example/Lab6/README.md)
 ## [Лабораторна робота №7](src/main/java/org/example/Lab7/README.md)
-## [Лабораторна робота №8](src/main/java/org/example/Lab8/README.md)(In progress)
-## [Лабораторна робота №9](src/main/java/org/example/Lab9/README.md)(In progress)
+## [Лабораторна робота №8](src/main/java/org/example/Lab8/README.md)
+## [Лабораторна робота №9](src/main/java/org/example/Lab9/README.md)
